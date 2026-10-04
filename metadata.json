@@ -1,0 +1,6 @@
+{
+  "name": "PSIKOLERA - Pegadas de Sangue Tour 2026",
+  "description": "Bilheteria oficial da turnê Pegadas de Sangue da banda Psikolera no The Monica Club em São Paulo. Escolha seu setor, garanta ingressos e acesse o dossiê da banda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

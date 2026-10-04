@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-headline: 'Anton', Impact, sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0706;
+    color: #cfc8ba;
+    font-family: var(--font-body);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #120908;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b91c1c;
+  }
+}
+
+.font-headline {
+  font-family: 'Anton', Impact, sans-serif;
+}
+
+.font-body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+.torn-perforation {
+  background-image: radial-gradient(circle at 10px, transparent 10px, #140e0d 11px);
+}
+
+.distress-tape {
+  background: repeating-linear-gradient(45deg, #b91c1c, #b91c1c 10px, #180d0b 10px, #180d0b 20px);
+}
+
+.text-stencil {
+  text-shadow: 2px 2px 0px #000, -1px -1px 0 #3f1e1a;
+}
+
+.glow-blood {
+  box-shadow: 0 0 25px rgba(185, 28, 28, 0.45);
+}
+
+.glow-blood-strong {
+  box-shadow: 0 0 35px rgba(239, 68, 68, 0.7);
+}
