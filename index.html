@@ -15,33 +15,19 @@
     <script>
       (function() {
         try {
-          var originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
-          var currentFetch = originalFetch;
-          Object.defineProperty(window, 'fetch', {
-            configurable: true,
-            enumerable: true,
-            get: function() {
-              return currentFetch;
-            },
-            set: function(fn) {
-              currentFetch = fn;
+          if (typeof window !== 'undefined') {
+            var desc = Object.getOwnPropertyDescriptor(window, 'fetch') || Object.getOwnPropertyDescriptor(Window.prototype, 'fetch');
+            if (desc && !desc.writable && !desc.set) {
+              var currentFetch = window.fetch;
+              Object.defineProperty(window, 'fetch', {
+                configurable: true,
+                enumerable: true,
+                get: function() { return currentFetch; },
+                set: function(val) { currentFetch = val; }
+              });
             }
-          });
-        } catch (e) {
-          try {
-            var protoFetch = Window.prototype.fetch;
-            Object.defineProperty(Window.prototype, 'fetch', {
-              configurable: true,
-              enumerable: true,
-              get: function() {
-                return currentFetch || protoFetch;
-              },
-              set: function(fn) {
-                currentFetch = fn;
-              }
-            });
-          } catch (err) {}
-        }
+          }
+        } catch (_) {}
       })();
     </script>
   </head>
